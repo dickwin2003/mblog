@@ -22,6 +22,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+
 </head>
 <body class="bg-white font-family-karla">
 
@@ -96,13 +97,11 @@
 				-->
                 <div class="bg-white flex flex-col justify-start p-6">
                     <a href="#" class="text-blue-700 text-lm font-bold uppercase pb-4">黃大仙線上靈籤</a>
-                    <a href="#" class="text-1xl font-bold hover:text-gray-700 pb-4">「黃大仙有求必應」是香港人的順口語，本站提供一站式黃大仙線上靈籤及解籤服務，誠心向大仙稟報求問之事，然後搖動籤筒求籤。一籤問一事，一事問一次。</a>
-                        您求得了「第八十三籤」：
-
+                    <a href="#" class="text-1xl font-bold hover:text-gray-700 pb-4">「黃大仙有求必應」是香港人的順口語，本站提供一站式黃大仙線上靈籤及解籤服務，誠心向大仙稟報求問之事，然後搖動籤筒求籤。一籤問一事，一事問一次。您求得了第「<span id="the_num_1"></span>籤」：</a>
                 </div>
 				<div class="flex justify-between">
 				  <div class="w-3/5 bg-wihte-500 text-white p-2 ml-7">
-					  <a href="#" class="uppercase text-gray-800 hover:text-black">您求得了第八十三籤，您可擲聖杯來替您判定靈籤與否，或者立即解說此籤。</i></a><br>
+					  <a href="#" class="uppercase text-gray-800 hover:text-black">您求得了第<span id='the_num_2'></span>籤，您可擲聖杯來替您判定靈籤與否，或者立即解說此籤。</i></a><br>
 					  <a href="#" class="uppercase text-gray-800 hover:text-black">注意！若決定使用聖杯來判定，就必須擲到聖杯才算靈籤，若擲到笑杯就重新求過。向神明求籤乃神聖之事，別因抽中下下籤或預先看過簽文而賴皮哦，賴皮的話，無論那一位神都懶得理你！</i></a><br>
 					  <p class="mb-3"></p>
 					  
@@ -115,10 +114,10 @@
 						<button type="button" class="w-3/6 text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-0 py-1.5 text-center me-0 mb-1 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">解签</button>
 						-->
 						<button type="button" class="w-3/6 px-1 py-1 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg rounded-rg hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-						掷圣杯
+						<a href="1.html">掷圣杯</a>
 						</button>&nbsp;
 						<button type="button" class="w-3/6 px-1 py-1 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg rounded-rg hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-						解&nbsp;&nbsp;&nbsp;&nbsp;签
+						<a href="2.html">解&nbsp;&nbsp;&nbsp;&nbsp;签</a>
 						</button>
 					  </div>
 				</div>
@@ -249,6 +248,46 @@
             }
         }
     </script>
+	<script>
+		function getRandomInt(min, max) {
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
 
+		var randomInt = getRandomInt(1, 99);
+		console.log(randomInt);
+
+function numberToChineseUppercase(num) {
+    if (typeof num !== 'number' || num < 1 || num > 99) {
+        return '输入错误，请输入1到99之间的数字';
+    }
+
+    // 定义个位数的汉字表示
+    const units = ['壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+    // 定义十位数的汉字表示
+    const tens = ['', '拾', '贰拾', '叁拾', '肆拾', '伍拾', '陆拾', '柒拾', '捌拾', '玖拾'];
+
+    // 处理个位数为0的情况
+    if (num === 10) {
+        return '拾';
+    }
+
+    // 转换十位数
+    let result = tens[Math.floor(num / 10)];
+    // 转换个位数
+    if (num % 10 !== 0) {
+        result += units[num % 10 - 1];
+    }
+
+    return result;
+}
+
+// 使用示例
+//console.log();  // 输出：壹
+
+document.getElementById("the_num_1").innerText=numberToChineseUppercase(randomInt);
+document.getElementById("the_num_2").innerText=numberToChineseUppercase(randomInt);
+	</script>
 </body>
 </html>
