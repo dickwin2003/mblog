@@ -259,7 +259,7 @@
 		console.log(randomInt);
 
 function numberToTraditionalChinese(num) {
-    if (typeof num !== 'number' || num < 1 || num > 99) {
+    if (typeof num !== 'number' || num <= 1 || num => 99) {
         return '輸入錯誤，請輸入1到99之間的數字';
     }
 
