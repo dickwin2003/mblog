@@ -1,5 +1,40 @@
-# Tailwind Blog Template
+# Welcome to Remix!
 
-This is a simple blog template buit with [Tailwind](https://tailwindcss.com/) and [AlpineJS](https://github.com/alpinejs/alpine). Alpine was used for the mobile menu and the basic carousel at the bottom of the page.
+- 📖 [Remix docs](https://remix.run/docs)
 
-View the blog demo [here](https://tailwind-blog-demo.dgrzyb.me) and the post demo [here](https://tailwind-blog-demo.dgrzyb.me/post.html) 😎
+## Development
+
+Run the dev server:
+
+```shellscript
+npm run dev
+```
+
+## Deployment
+
+First, build your app for production:
+
+```sh
+npm run build
+```
+
+Then run the app in production mode:
+
+```sh
+npm start
+```
+
+Now you'll need to pick a host to deploy it to.
+
+### DIY
+
+If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+- `build/server`
+- `build/client`
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.

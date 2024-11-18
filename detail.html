@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵签详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="text-2xl font-bold text-gray-900">灵签</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/index.html" class="text-gray-600 hover:text-gray-900">首页</a>
+                    <a href="/draw.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">抽签</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- 签文详情 -->
+        <article class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="px-6 py-8">
+                <h1 class="text-3xl font-bold text-center mb-6">第100签</h1>
+                <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+                    <!-- 签文 -->
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <h2 class="text-xl font-semibold mb-2">签文</h2>
+                        <p class="text-gray-600">这里是签文内容...</p>
+                    </div>
+                    
+                    <!-- 解签 -->
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h2 class="text-xl font-semibold mb-2">解签</h2>
+                        <p class="text-gray-600">这里是解签内容...</p>
+                    </div>
+
+                    <!-- 注解 -->
+                    <div class="border-l-4 border-yellow-600 pl-4">
+                        <h2 class="text-xl font-semibold mb-2">注解</h2>
+                        <p class="text-gray-600">这里是注解内容...</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 相关签文 -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold mb-6">其他灵签</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <a href="/qian/lqhdx_1.htm" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <span class="text-gray-900">第1签</span>
+                </a>
+                <a href="/qian/lqhdx_2.htm" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <span class="text-gray-900">第2签</span>
+                </a>
+                <!-- 更多签文链接 -->
+            </div>
+            
+            <!-- 分页 -->
+            <div class="mt-8 flex justify-center">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        上一页
+                    </a>
+                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        1
+                    </a>
+                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-blue-50 text-sm font-medium text-blue-600">
+                        2
+                    </a>
+                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        3
+                    </a>
+                    <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        下一页
+                    </a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 text-center">
+            <p class="text-base text-gray-400">
+                &copy; 2024 灵签. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

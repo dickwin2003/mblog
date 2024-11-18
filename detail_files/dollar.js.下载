@@ -1,0 +1,417 @@
+/**
+ * 各广告位函数封装js脚本
+ */
+var cfg_static_url = '//static.k366.com'; // 静态资源域名
+
+// 在横幅显示
+function showComBanner() {
+document.writeln('<div style="text-align:center;margin: 0 auto;border: #9a7240 1px solid;background: #fae0a3;width: 998px;border-top: 0;">');
+document.writeln('<style>ul.pc-header-cslinks li {float: left; width: 126px; font-size: 15px;padding:5px 8px}</style>');
+document.writeln('<ul class="pc-header-cslinks">');
+document.writeln('    <li><a href="//ffcs.k366.com/zhongshengyun/?fromid=k366_15" rel="nofollow" style="color:#935422;," target="_blank">八字终生运势</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/bzhehun/?fromid=k366_15" rel="nofollow" style="color:red;," target="_blank">八字合婚</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/bzjingpi/?fromid=k366_15" rel="nofollow" style="color:#f60;," target="_blank">八字精批</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/bzcaiyun/?fromid=k366_15" rel="nofollow" style="color:#935422;," target="_blank">八字财运</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/bzshiyeyun/?fromid=k366_15" rel="nofollow" style="color:f60;," target="_blank">八字事业运</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/liunianyunshi2022/?fromid=k366_15" rel="nofollow" style="color:red;," target="_blank">2022年运程</a></li>');
+document.writeln('    <li><a href="//ffcs.k366.com/hunyincesuan/?fromid=k366_15" rel="nofollow" style="color:red;," target="_blank">婚姻测算</a></li>');
+document.writeln('</ul>');
+document.writeln('<div class="clear"></div>');
+document.writeln('</div>');
+}
+
+// 在栏目循环列表结尾处显示
+function showCateEnd() {
+}
+
+// 在列表页列表开始位置显示
+function showListStart() {
+}
+
+// 在列表页列表结束位置显示
+function showListEnd() {
+}
+
+// 在专题列表开始位置显示
+function showZtListStart() {
+}
+
+// 在专题列表结束位置显示
+function showZtListEnd() {
+}
+
+// 在公共右侧1显示
+function showComRight1() {
+    /*
+    document.writeln('<div class="box2 mt10">');
+    payForm('QDsmxs60');
+    document.writeln('</div>');
+    */
+}
+
+// 在公共右侧2显示
+function showComRight2() {
+}
+
+// 在公共右侧3显示
+function showComRight3() {
+}
+
+// 在公共右侧4显示
+function showComRight4() {
+}
+
+// 在文章开头显示
+function showArtStart() {
+    pc8gongge('k366_14'); 
+}
+
+// 在文章中第一张图片
+function showArtPic() {
+}
+
+// 在文章结尾显示
+function showArtEnd() {
+    payForm('k366_3');
+}
+
+// 在底部开头显示
+function showFooterStart() {
+}
+
+// 在body结束显示
+function showBodyEnd() {
+    showRightBottom();
+
+    // 修改文末表单fromid
+    $('div.form-btn > a.smxs_pay_btn[data-fromid="k366_artEndForm"]').attr('data-fromid', 'k366_pcAEF');
+
+    // 起名表单日期时间默认采用当前日期时间
+    if ($(".bazi_form input[name='xing']").length > 0) {
+        // 当前日期时间
+        var d  = new Date()
+        ,year  = d.getFullYear()
+        ,month = d.getMonth() + 1
+        ,day   = d.getDate()
+        ,hour  = d.getHours();
+
+        var bdayEl = $(".bazi_form input[name='birthday']")
+        ,bdayTextEl = $(".bazi_form input.Js_date")
+        ,hourEl = $(".bazi_form select[name='hour']");
+
+        var bdayType = 0 // 公历日历
+        ,bdayText = "公历:" + year + '年' + month + '月' + day + '日'
+        ,bday = year + '-' + month + '-' + day;
+
+        // 设置日期
+        bdayTextEl.attr("data-type", bdayType);
+        bdayTextEl.attr("data-date", bday);
+        bdayTextEl.val(bdayText);
+        bdayEl.val(bday);
+        // 设置时辰
+        hourEl.find("option[value=" + hour + "]").attr("selected", true);
+    }
+
+    // 监听付费按钮点击事件
+    if ($('.smxs_pay_btn').length > 0) {
+        $('.smxs_pay_btn').on('click', function(){
+            var othis = $(this)
+            ,fromid = othis.data('fromid')
+            ,product = othis.data('product')
+            ,platform = othis.data('platform')
+            ,form = $(othis.parents('form')[0]);
+
+            var birthday = form.find('input[name="birthday"]').val()
+            ,hour = form.find('select[name="hour"]').val()
+            ,sex = form.find('input[name="sex"]').val()
+            ,isNongli = form.find('input[class="Js_date"]').attr('data-type')
+            ,dateText = form.find('input[class="Js_date"]').val()
+            ,host = window.location.host
+            ,pathname = window.location.pathname
+            ,refer = host + pathname;
+
+            var url = 'http://' + platform + '/' + product + '/?fromid=' + fromid + '&sex=' + sex + '&birthday=' + birthday + '&hour=' + hour + '&isnongli=' + isNongli + '&datetext=' + dateText + '&refer=' + refer;
+            if (form.find('input[name="xing"]').length > 0) {
+                var xing = form.find('input[name="xing"]').val();
+                url += "&xing=" + xing;
+            }
+            url = encodeURI(url);
+            window.open(url, '_blank');
+        });
+    }
+
+    // 隐藏文末 猜你喜欢文章
+    var likeEl = $("div.like:contains(您可能还喜欢：)");
+    if (likeEl.length > 0) {
+        //likeEl.hide();
+        likeEl.next('ul').hide();
+    }
+
+    // 如果没有内容分页，则隐藏content-page元素；隐藏文章最后的转载说明
+    var cpageEl = $('ul.content-page');
+    console.dir(cpageEl.html());
+    if (cpageEl.html() == '') {
+        cpageEl.hide();
+    }
+    cpageEl.prev('p:contains(转载请注明来自)').hide();
+
+    // 如果文末表单的右侧按钮为"八字精批"，则将其移动至左侧
+    var btns = $('.bazi_form .form-btn');
+    var lBtn = btns.children('a:first-child');
+    var rBtn = btns.children('a:last-child');
+    var btnName = rBtn.html();
+    if (btnName == '八字精批') {
+        //lBtn.removeClass('left');
+        //lBtn.addClass('right');
+        //rBtn.removeClass('right');
+        //rBtn.addClass('left');
+        lBtn.hide();
+        rBtn.width('100%');
+    }
+}
+
+// 在八字表单中显示
+function showBaziForm() {
+    payButton();
+}
+
+// 在轮播图下方显示
+function showFocusBottom() {
+    pc8gongge('k366_33'); 
+}
+
+// pc八宫格
+function pc8gongge(fromid) {
+    document.writeln('<div style="text-align:center;margin:5px auto;border:#9a7240 1px solid;background:#faf3e2">');
+    document.writeln('    <style>');
+    document.writeln('        ul.pc-cslinks li {float: left; width: 140px; font-size: 15px;padding:0 8px;}');
+    document.writeln('        .art-content .content ul.pc-cslinks li a {text-decoration: none;}');
+    document.writeln('    </style>');
+    document.writeln('    <ul class="pc-cslinks">');
+    document.writeln('        <li><a href="//ffcs.k366.com/zhongshengyun/?fromid=' + fromid + '" rel="nofollow" style="color:#935422;," target="_blank">八字终生运势</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/bzhehun/?fromid=' + fromid + '" rel="nofollow" style="color:red;," target="_blank">八字合婚</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/bzjingpi/?fromid=' + fromid + '" rel="nofollow" style="color:#f60;," target="_blank">八字精批</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/bzcaiyun/?fromid=' + fromid + '" rel="nofollow" style="color:#935422;," target="_blank">八字财运</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/bzshiyeyun/?fromid=' + fromid + '" rel="nofollow" style="color:#f60;," target="_blank">八字事业运</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/liunianyunshi2022/?fromid=' + fromid + '" rel="nofollow" style="color:red;," target="_blank">2022年运程</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/hunyincesuan/?fromid=' + fromid + '" rel="nofollow" style="color:red;," target="_blank">婚姻测算</a></li>');
+    document.writeln('        <li><a href="//ffcs.k366.com/bzjingpi/?fromid=' + fromid + '" rel="nofollow" style="color:#f60;," target="_blank">在线算命</a></li>');
+    document.writeln('    </ul>');
+    document.writeln('    <div class="clear"></div>');
+    document.writeln('</div>');
+}
+
+// 在右侧栏顶部显示
+function showComRightTop() {
+    //pcRightTopCYG();
+}
+
+// pc右侧顶部慈元阁展示
+function pcRightTopCYG() {
+    document.writeln('<div class="box2">');
+    document.writeln('<table width="290" border="0" cellspacing="0" cellpadding="1">');
+    document.writeln('  <tr>');
+    document.writeln('    <td width="290"><img width="290" src="http://www.cygfs.com/xing_img/yun270.jpg" usemap="#k366" border="0"></td>');
+    document.writeln('  </tr>');
+    document.writeln('</table>');
+    document.writeln('<map name="k366">');
+    document.writeln('    <area shape="rect" coords="232,210,289,261" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/zhu.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="158,209,215,260" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/gou.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="83,208,140,259" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/ji.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="12,208,69,259" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/hou.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="232,147,289,198" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/yang.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="158,148,215,199" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/ma.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="85,149,142,200" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/she.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="13,148,70,199" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/long.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="232,87,289,138" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/tu.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="158,86,215,137" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/hu.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="84,86,141,137" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/niu.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="12,85,69,136" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng/shu.html?k366300x270" rel="nofollow" target="_blank" />');
+    document.writeln('    <area shape="rect" coords="3,4,297,79" href="http://bmf.cygfs.com/PC2018/shengxiaoyuncheng.html?k366300x270" rel="nofollow" target="_blank">');
+    document.writeln('</map>');
+    document.writeln('</div>');
+}
+
+// 在文章页上下篇下方显示
+function showPreNextBottom() {
+    //showXiangange12sx();
+}
+
+// 付费按钮
+function payButton() {
+    document.writeln('<a style="display: inline-block; height: 23px; padding: 1px 15px; color: rgb(255, 102, 0);" onmouseover="this.style.color=\'#fff\'" onmouseout="this.style.color=\'#f60\'" class="ml10 btn" href="\/\/ffcs.k366.com\/bzjingpi\/?fromid=k366_17" target="_blank" rel="nofollow">精批测算</a>');
+}
+
+// 付费表单
+function payForm(fid) {
+    document.writeln('<script type="text/javascript" src="' + cfg_static_url + '/static/common/js/jquery-2.0.3.min.js"></script>');
+    document.writeln('<style>');
+    document.writeln('    .bazi_form {margin-bottom: 10px;}');
+    document.writeln('    .bazi_form .title {background-image: url(' + cfg_static_url + '/static/common/payform/img/form_title3.png); background-repeat: repeat-x; background-position: center center; background-size: auto 23px; margin-top: 10px;}');
+    document.writeln('    .bazi_form .title .m {width: 171px; background-image: url(' + cfg_static_url + '/static/common/payform/img/form_title_m3.png); background-repeat: no-repeat; background-position: center center; background-size: auto 23px; text-align: center; color: #f60; font-size: 18px; margin: 0 auto;}');
+    document.writeln('    .public_form_wrap .left {width:22%;}');
+    document.writeln('    .bazi_form .form-btn { width: 90%; margin: 10px auto 0;}');
+    document.writeln('    .bazi_form .form-btn .ui-btn { width: 46%; display: block; padding: 8px 0; font-size: 16px; text-align: center; border: 0; border-radius: 5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidde n; }');
+    document.writeln('    .bazi_form .form-btn .ui-bg { color: #fff; border: solid 1px #da7c0c; background: #f78d1d; background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20)); bac kground: -moz-linear-gradient(top, #faa51a, #f47a20); }');
+    document.writeln('    .bazi_form .form-btn .left { float: left }');
+    document.writeln('    .bazi_form .form-btn .right { float: right }');
+    document.writeln('</style>');
+    document.writeln('<link href="' + cfg_static_url + '/static/common/payform/calendar.css" rel="stylesheet" type="text/css">');
+    document.writeln('<link href="' + cfg_static_url + '/static/common/payform/userinput.css" rel="stylesheet" type="text/css">');
+    document.writeln('<script type="text/javascript" src="' + cfg_static_url + '/static/common/payform/calendar.min.js"></script>');
+    document.writeln('<div class="bazi_form">');
+    document.writeln('    <div class="title">');
+    document.writeln('        <div class="m">精品测算</div>');
+    document.writeln('    </div>');
+    document.writeln('    <form action="" method="post" name="myform">');
+    document.writeln('        <div class="public_form_wrap">');
+    document.writeln('            <ul>');
+    document.writeln('                <li>');
+    document.writeln('                    <div class="left">');
+    document.writeln('                        出生日期');
+    document.writeln('                    </div>');
+    document.writeln('                    <div class="auto">');
+    document.writeln('                        <input type="text" id="birthday" data-input-id="b_input" class="Js_date"');
+    document.writeln('                        data-type="1" value="农历:1980年正月初一" placeholder="请选择日期" data-date="1980-2-16">');
+    document.writeln('                        <input type="hidden" name="birthday" id="b_input" value="1980-2-16">');
+    document.writeln('                    </div>');
+    document.writeln('                </li>');
+    document.writeln('                <li>');
+    document.writeln('                    <div class="left">');
+    document.writeln('                        出生时辰');
+    document.writeln('                    </div>');
+    document.writeln('                    <div class="auto">');
+    document.writeln('                        <span class="auto input J-time">');
+    document.writeln('                            <select class="sel" name="hour">');
+    document.writeln('                                <option value="0">子时 0点</option>');
+    document.writeln('                                <option value="1">丑时 1点</option>');
+    document.writeln('                                <option value="2">丑时 2点</option>');
+    document.writeln('                                <option value="3">寅时 3点</option>');
+    document.writeln('                                <option value="4">寅时 4点</option>');
+    document.writeln('                                <option value="5">卯时 5点</option>');
+    document.writeln('                                <option value="6">卯时 6点</option>');
+    document.writeln('                                <option value="7">辰时 7点</option>');
+    document.writeln('                                <option value="8">辰时 8点</option>');
+    document.writeln('                                <option value="9">巳时 9点</option>');
+    document.writeln('                                <option value="10">巳时 10点</option>');
+    document.writeln('                                <option value="11">午时 11点</option>');
+    document.writeln('                                <option value="12">午时 12点</option>');
+    document.writeln('                                <option value="13">未时 13点</option>');
+    document.writeln('                                <option value="14">未时 14点</option>');
+    document.writeln('                                <option value="15">申时 15点</option>');
+    document.writeln('                                <option value="16">申时 16点</option>');
+    document.writeln('                                <option value="17">酉时 17点</option>');
+    document.writeln('                                <option value="18">酉时 18点</option>');
+    document.writeln('                                <option value="19">戌时 19点</option>');
+    document.writeln('                                <option value="20">戌时 20点</option>');
+    document.writeln('                                <option value="21">亥时 21点</option>');
+    document.writeln('                                <option value="22">亥时 22点</option>');
+    document.writeln('                                <option value="23">子时 23点</option>');
+    document.writeln('                            </select>');
+    document.writeln('                        </span>');
+    document.writeln('                    </div>');
+    document.writeln('                </li>');
+    document.writeln('                <script type="text/javascript">');
+    document.writeln('                    $(".Js_date:last").attr("id", "birthday" + $(".Js_date").length);');
+    document.writeln('                    $(".Js_date:last").attr("data-input-id", "b_input" + $(".Js_date").length);');
+    document.writeln('                    $("input[name=birthday]:last").attr("id", "b_input" + $(".Js_date").length); (new lCalendar).init("#" + $(".Js_date:last").attr("id"));');
+    document.writeln('                </script>');
+    document.writeln('                <li>');
+    document.writeln('                    <div class="left">您的性别</div>');
+    document.writeln('                    <div class="auto sex sex J_sex">');
+    document.writeln('                        <span data-value="1" class="cur">');
+    document.writeln('                            <i></i>');
+    document.writeln('                            <font>男</font>');
+    document.writeln('                        </span>');
+    document.writeln('                        <span data-value="2">');
+    document.writeln('                            <i></i>');
+    document.writeln('                            <font>女</font>');
+    document.writeln('                        </span>');
+    document.writeln('                        <input type="hidden" name="sex" value="1">');
+    document.writeln('                    </div>');
+    document.writeln('                </li>');
+    document.writeln('                <script type="text/javascript">');
+    document.writeln('                    var sexCheckbox = $(".J_sex:last");');
+    document.writeln('                    sexCheckbox.children("span").on("click", function() {');
+    document.writeln('                        $(this).addClass("cur"),');
+    document.writeln('                        $(this).siblings("span").removeClass("cur");');
+    document.writeln('                        var a = $(this).data("value");');
+    document.writeln('                        $(this).parent().find("input").val(a);');
+    document.writeln('                    });');
+    document.writeln('                </script>');
+    document.writeln('            </ul>');
+    document.writeln('        </div>');
+    document.writeln('        <div class="form-btn clearfix">');
+    document.writeln('            <a href="#" onclick="return false;" class="ui-btn ui-bg a-btn left smxs_pay_btn" data-fromid="' + fid + '" data-product="bzjingpi" data-platform="ffcs.k366.com" style="color:#fff; line-height:24px;" rel="nofollow">八字精批</a>');
+    document.writeln('            <a href="#" onclick="return false;" class="ui-btn ui-bg a-btn right smxs_pay_btn" data-fromid="' + fid + '" data-product="zhongshengyun" data-platform="ffcs.k366.com" style="color:#fff; line-height:24px;" rel="nofollow">终生运</a>');
+    document.writeln('        </div>');
+    document.writeln('    </form>');
+    document.writeln('</div>');
+
+    // 监听付费按ln钮点击事件
+    document.writeln("<script>");
+    document.writeln("if ($('.smxs_pay_btn').length > 0) {");
+    document.writeln("    $('.smxs_pay_btn').on('click', function(){");
+    document.writeln("        var othis = $(this)");
+    document.writeln("        ,fromid = othis.data('fromid')");
+    document.writeln("        ,product = othis.data('product')");
+    document.writeln("        ,platform = othis.data('platform')");
+    document.writeln("        ,form = $(othis.parents('form')[0]);");
+    document.writeln("        var birthday = form.find('input[name=\"birthday\"]').val()");
+    document.writeln("        ,hour = form.find('select[name=\"hour\"]').val()");
+    document.writeln("        ,sex = form.find('input[name=\"sex\"]').val()");
+    document.writeln("        ,isNongli = form.find('input[class=\"Js_date\"]').attr('data-type')");
+    document.writeln("        ,dateText = form.find('input[class=\"Js_date\"]').val()");
+    document.writeln("        ,host = window.location.host");
+    document.writeln("        ,pathname = window.location.pathname");
+    document.writeln("        ,refer = host + pathname;");
+    document.writeln("        var url = '//' + platform + '/' + product + '/?fromid=' + fromid + '&sex=' + sex + '&birthday=' + birthday + '&hour=' + hour + '&isnongli=' + isNongli + '&datetext=' + dateText + '&refer=' + refer;");
+    document.writeln("        url = encodeURI(url);");
+    document.writeln("        window.open(url, '_blank');");
+    document.writeln("    });");
+    document.writeln("}");
+    document.writeln("</script>");
+}
+
+// 祥安阁
+function showXiangange12sx() {
+}
+
+// 右下角悬浮
+function showRightBottom() {
+    document.writeln('<style>');
+    document.writeln('/* 返回顶部悬浮功能 */');
+    document.writeln('.toolbar-item{background:url(' + cfg_static_url + '/static/k366_pc/images/toolbar.png) no-repeat;}');
+    document.writeln('.toolbar{position:fixed;right:0px;bottom:180px;margin-left: 510px;left: 50%;}/*假设网页宽度为1200px，导航条在右侧悬浮*/');
+    document.writeln('.toolbar-item{display:block;width:56px;height:56px;margin-top:5px;position:relative;-moz-transition:background-position 0s;}');
+    document.writeln('.toolbar-item-top{background-position:-3px -670px;}');
+    document.writeln('.toolbar-item-top:hover{background-position:-3px -732px;}');
+    document.writeln('</style>');
+    document.writeln('<div class="toolbar">');
+    document.writeln('    <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>');
+    document.writeln('</div>');
+}
+
+// 加载统计代码
+function statsCode() {
+    // baidu
+    var _hmt = _hmt || [];
+    (function() {
+          var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?caa254d2faef65a3197984b56702b482";
+              var s = document.getElementsByTagName("script")[0]; 
+                s.parentNode.insertBefore(hm, s);
+    })();
+
+    // /wenzhang/name/下页面统计
+    var url = window.location.href;
+    if (url.indexOf('/wenzhang/name/') > 0) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?edbe614f7509870cff4ad765a73b9995";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    }
+}

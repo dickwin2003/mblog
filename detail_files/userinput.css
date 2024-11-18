@@ -1,0 +1,105 @@
+@charset "utf-8";
+.public_form_wrap {
+    margin: 10px 10px 0;
+}
+.public_form_wrap ul {
+    border: 1px solid #e2ccb0;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #fff;
+}
+.public_form_wrap li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e2ccb0;
+    padding: 0 5px;
+}
+.public_form_wrap .left {
+    float: left;
+    color: #898989;
+    margin-right: 10px;
+}
+.public_form_wrap .auto, .public_tab li {
+    position: relative;
+}
+.public_form_wrap li .auto, .clear:after {
+    overflow: hidden;
+}
+.public_form_wrap .auto input {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+.public_form_wrap .auto .sel, .public_form_wrap .auto input {
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    background-image: url(img/icon_right.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px;
+    font-size: 16px;
+    color: #7c4328;
+}   
+.public_form_wrap .input.auto {
+    width: 100%;
+    display: inline-block;
+}   
+.public_form_wrap .auto, .public_tab li {
+    position: relative;
+}   
+.public_form_wrap .auto select {
+    background: 0 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0;
+}   
+.public_form_wrap li:nth-last-of-type(1) {
+    border-bottom: 0;
+}   
+
+
+
+.public_form_wrap .sex span {
+    display: block;
+    float: left;
+    padding-top: 10px;
+    width: 70px;
+}
+.public_form_wrap .sex i {
+    display: block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #9b6820;
+    background-color: #fff;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.public_form_wrap .sex span.cur i {
+    background: #9b6820 url(img/icon_suo_dagou.png) no-repeat center center;
+    background-size: 16px auto;
+}
+.public_form_wrap .sex span.cur font {
+    color: #333;
+}
+.public_form_wrap .sex font {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: left;
+    padding-left: 10px;
+    color: #898989;
+}
+.public_form_wrap input[name="xing"] {
+    background-image: none;
+}
+
