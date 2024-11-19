@@ -5,22 +5,22 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration
-} from "/build/_shared/chunk-UOBU4OYR.js";
+} from "/build/_shared/chunk-BQHH2O3L.js";
 import "/build/_shared/chunk-U4FRFQSK.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-XGOTYLZ5.js";
-import "/build/_shared/chunk-7M6SC7J5.js";
 import {
   createHotContext
 } from "/build/_shared/chunk-FC5AQ3XV.js";
 import "/build/_shared/chunk-UWV35TSL.js";
+import "/build/_shared/chunk-7M6SC7J5.js";
 import {
   __toESM
 } from "/build/_shared/chunk-PNG5AS42.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-MXDR3Z42.css";
+var tailwind_default = "/build/_assets/tailwind-Y4CDCZQK.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
@@ -46,6 +46,10 @@ var links = () => [{
   rel: "stylesheet",
   href: tailwind_default
 }, {
+  rel: "icon",
+  type: "image/png",
+  href: "/logo-light.png"
+}, {
   rel: "stylesheet",
   href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 }, {
@@ -59,54 +63,54 @@ function Layout({
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("meta", { charSet: "utf-8" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 37,
+        lineNumber: 41,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 38,
+        lineNumber: 42,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Meta, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 39,
+        lineNumber: 43,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Links, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 40,
+        lineNumber: 44,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 36,
+      lineNumber: 40,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("body", { className: "h-full bg-amber-50 font-serif", children: [
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ScrollRestoration, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 44,
+        lineNumber: 48,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 45,
+        lineNumber: 49,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LiveReload, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 46,
+        lineNumber: 50,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 42,
+      lineNumber: 46,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 35,
+    lineNumber: 39,
     columnNumber: 10
   }, this);
 }
@@ -114,11 +118,11 @@ _c = Layout;
 function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Layout, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
     fileName: "app/root.tsx",
-    lineNumber: 53,
+    lineNumber: 57,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/root.tsx",
-    lineNumber: 52,
+    lineNumber: 56,
     columnNumber: 10
   }, this);
 }
@@ -134,4 +138,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-ZOHTFLFI.js.map
+//# sourceMappingURL=/build/root-Q6MNJ2EU.js.map

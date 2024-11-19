@@ -2,11 +2,11 @@ import {
   require_react_dom
 } from "/build/_shared/chunk-U4FRFQSK.js";
 import {
-  require_react
-} from "/build/_shared/chunk-7M6SC7J5.js";
-import {
   createHotContext
 } from "/build/_shared/chunk-FC5AQ3XV.js";
+import {
+  require_react
+} from "/build/_shared/chunk-7M6SC7J5.js";
 import {
   __commonJS,
   __esm,
@@ -10220,4 +10220,4 @@ react-router-dom/dist/index.js:
    * @license MIT
    *)
 */
-//# sourceMappingURL=/build/_shared/chunk-UOBU4OYR.js.map
+//# sourceMappingURL=/build/_shared/chunk-BQHH2O3L.js.map
