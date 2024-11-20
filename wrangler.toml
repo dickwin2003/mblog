@@ -1,11 +1,6 @@
 name = "mblog"
 compatibility_date = "2024-01-01"
-main = "build/index.js"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "mblog-db"
-database_id = "96782f01-254a-4306-8c93-ec85fcb80ef9"
+main = "public/_worker.js"
 
 [build]
 command = "npm run build"
@@ -13,5 +8,8 @@ command = "npm run build"
 [site]
 bucket = "./public"
 
-[dev]
-port = 8788
+[build.upload]
+format = "modules"
+
+[env.production]
+workers_dev = true
