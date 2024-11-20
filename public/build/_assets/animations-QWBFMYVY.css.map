@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/styles/animations.css"],
-  "sourcesContent": ["@keyframes shake {\n  0%, 100% { transform: rotate(0deg); }\n  25% { transform: rotate(-20deg); }\n  75% { transform: rotate(20deg); }\n}\n\n.animate-shake {\n  animation: shake 0.5s infinite;\n}\n"],
-  "mappings": ";AAAA;;AACa;;;AACL;;;AACA;;;AAGR;AACE;;",
-  "names": []
-}
