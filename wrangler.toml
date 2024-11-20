@@ -17,4 +17,5 @@ bucket = "./public"
 [env.production]
 workers_dev = true
 
-pages_build_output_dir = "public"
+[build.output]
+directory = "public"
