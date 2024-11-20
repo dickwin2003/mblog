@@ -7,17 +7,22 @@
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "wrangler pages dev ./public",
-    "deploy": "remix build && wrangler pages deploy ./public",
+    "deploy": "npm install && remix build && wrangler pages deploy ./public --project-name mblog --commit-dirty=true",
     "typecheck": "tsc"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@remix-run/cloudflare": "^2.3.1",
-    "@remix-run/cloudflare-workers": "^2.3.1",
+    "@remix-run/cloudflare-pages": "^2.3.1",
     "@remix-run/react": "^2.3.1",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "stream-browserify": "^3.0.0",
+    "crypto-browserify": "^3.12.0",
+    "path-browserify": "^1.0.1",
+    "os-browserify": "^0.3.0",
+    "querystring-es3": "^0.2.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231121.0",
@@ -36,5 +41,15 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "browser": {
+    "crypto": "crypto-browserify",
+    "stream": "stream-browserify",
+    "path": "path-browserify",
+    "os": "os-browserify",
+    "fs": false,
+    "net": false,
+    "tls": false,
+    "zlib": false
   }
 }

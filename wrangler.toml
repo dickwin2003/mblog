@@ -2,14 +2,19 @@ name = "mblog"
 compatibility_date = "2024-01-01"
 main = "public/_worker.js"
 
+[compatibility_flags]
+nodejs_compat = true
+
 [build]
 command = "npm run build"
-
-[site]
-bucket = "./public"
 
 [build.upload]
 format = "modules"
 
+[site]
+bucket = "./public"
+
 [env.production]
 workers_dev = true
+
+pages_build_output_dir = "public"
