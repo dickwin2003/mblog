@@ -22,7 +22,8 @@
     "crypto-browserify": "^3.12.0",
     "path-browserify": "^1.0.1",
     "os-browserify": "^0.3.0",
-    "querystring-es3": "^0.2.1"
+    "querystring-es3": "^0.2.1",
+    "readable-stream": "^4.4.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231121.0",
@@ -47,11 +48,11 @@
     "stream": "stream-browserify",
     "path": "path-browserify",
     "os": "os-browserify",
-    "buffer": false,
-    "events": false,
     "fs": false,
     "net": false,
     "tls": false,
-    "zlib": false
+    "zlib": false,
+    "buffer": false,
+    "events": false
   }
 }
