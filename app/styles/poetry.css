@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500&display=swap');
+
+.font-poetry {
+  font-family: 'Noto Serif SC', serif;
+  letter-spacing: 0.2em;
+  line-height: 2;
+}
+
+.font-poetry > div {
+  position: relative;
+  padding: 1rem 2rem;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+}
+
+/* 添加竖线装饰 */
+.font-poetry > div:not(:last-child)::after {
+  content: '※';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #9ca3af;
+  font-size: 1rem;
+}
