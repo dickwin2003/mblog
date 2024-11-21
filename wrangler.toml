@@ -7,3 +7,6 @@ command = "npm run build"
 
 [build.upload]
 format = "modules"
+
+[env]
+NODE_ENV = "production"

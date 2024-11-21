@@ -1,0 +1,15 @@
+/* app/styles/animations.css */
+@keyframes shake {
+  0%, to {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+}
+.animate-shake {
+  animation: shake .5s infinite;
+}

@@ -25,11 +25,16 @@ export default defineConfig({
     rollupOptions: {
       external: ['node:crypto', 'node:stream'],
     },
+    platform: 'node'
   },
   resolve: {
     alias: {
       crypto: 'node:crypto',
       stream: 'node:stream'
     }
+  },
+  ssr: {
+    target: 'node',
+    format: 'esm'
   }
 });
