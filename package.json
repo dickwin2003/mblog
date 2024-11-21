@@ -8,17 +8,16 @@
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "pages:build": "rm -rf node_modules && npm install --legacy-peer-deps && npm install --legacy-peer-deps tailwindcss postcss autoprefixer @tailwindcss/typography && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy ./public/build"
+    "pages:build": "rm -rf node_modules && npm install --legacy-peer-deps && npx remix build",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy ./public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@libsql/client": "^0.5.3",
     "@remix-run/cloudflare": "^2.3.1",
+    "@remix-run/cloudflare-pages": "^2.3.1",
     "@remix-run/css-bundle": "^2.3.1",
-    "@remix-run/node": "^2.3.1",
     "@remix-run/react": "^2.3.1",
-    "@remix-run/serve": "^2.3.1",
     "@remix-run/dev": "^2.3.1",
     "esbuild": "0.17.19",
     "isbot": "^3.6.8",
