@@ -8,7 +8,7 @@
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "pages:build": "remix build && if not exist public\\build mkdir public\\build && xcopy /E /I /Y public\\* public\\build\\",
+    "pages:build": "npm install && remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
     "pages:deploy": "npm run pages:build && wrangler pages deploy ./public/build"
   },
   "dependencies": {
