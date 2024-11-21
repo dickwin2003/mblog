@@ -8,7 +8,7 @@
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "pages:build": "npm install && npm install @remix-run/dev && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
+    "pages:build": "npm install && npm install @remix-run/dev esbuild@0.17.19 && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
     "pages:deploy": "npm run pages:build && wrangler pages deploy ./public/build"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@remix-run/react": "^2.3.1",
     "@remix-run/serve": "^2.3.1",
     "@remix-run/dev": "^2.3.1",
+    "esbuild": "0.17.19",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
