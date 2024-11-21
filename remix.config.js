@@ -5,14 +5,9 @@ export default {
   serverPlatform: "neutral",
   tailwind: true,
   postcss: true,
+  // Remove node built-in modules from serverDependenciesToBundle
   serverDependenciesToBundle: [
     "isbot",
-    "cookie-signature",
-    "stream-browserify",
-    "crypto-browserify",
-    "path-browserify",
-    "os-browserify",
-    "querystring-es3",
     /^@fortawesome\/.*/,
   ],
   // appDirectory: "app",
@@ -26,6 +21,5 @@ export default {
     v2_meta: true,
     v2_normalizeFormMethod: true,
     v2_routeConvention: true,
-    v2_headers: true,
   },
 };
