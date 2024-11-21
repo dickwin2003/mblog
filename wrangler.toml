@@ -12,6 +12,10 @@ database_id = "96782f01-254a-4306-8c93-ec85fcb80ef9"
 
 [env.production]
 vars = { NODE_ENV = "production" }
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "mblog-db"
+database_id = "96782f01-254a-4306-8c93-ec85fcb80ef9"
 
 [env.preview]
 vars = { NODE_ENV = "preview" }
