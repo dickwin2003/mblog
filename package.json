@@ -4,10 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
+    "build": "NODE_ENV=production remix build",
     "dev": "remix dev --manual",
     "start": "wrangler pages dev ./public",
-    "deploy": "npm install && remix build && wrangler pages deploy ./public --project-name mblog --commit-dirty=true",
+    "deploy": "NODE_ENV=production npm install && remix build && wrangler pages deploy ./public --project-name mblog --commit-dirty=true",
     "typecheck": "tsc"
   },
   "dependencies": {

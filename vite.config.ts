@@ -21,4 +21,15 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      external: ['node:crypto', 'node:stream'],
+    },
+  },
+  resolve: {
+    alias: {
+      crypto: 'node:crypto',
+      stream: 'node:stream'
+    }
+  }
 });
