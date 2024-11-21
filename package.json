@@ -4,11 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual",
-    "start": "remix-serve ./build/index.js",
+    "build": "npx remix build",
+    "dev": "npx remix dev --manual",
+    "start": "npx remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "pages:build": "npm install && remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
+    "pages:build": "npm install && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
     "pages:deploy": "npm run pages:build && wrangler pages deploy ./public/build"
   },
   "dependencies": {
