@@ -2,11 +2,19 @@ name = "mblog"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-[build]
-command = "npm run build"
+# Pages 配置
+pages_build_output_dir = "public/build"
 
-[build.upload]
-format = "modules"
+[[d1_databases]]
+binding = "DB"
+database_name = "mblog-db"
+database_id = "96782f01-254a-4306-8c93-ec85fcb80ef9"
 
-[env]
-NODE_ENV = "production"
+[env.production]
+vars = { NODE_ENV = "production" }
+
+[env.preview]
+vars = { NODE_ENV = "preview" }
+
+[dev]
+port = 8788
