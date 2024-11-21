@@ -8,7 +8,7 @@
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "pages:build": "npm install --no-package-lock && npm install --no-package-lock @remix-run/dev esbuild@0.17.19 && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
+    "pages:build": "rm -rf node_modules && npm install --legacy-peer-deps && npx remix build && mkdir -p ./public/build && cp -r ./public/* ./public/build/",
     "pages:deploy": "npm run pages:build && wrangler pages deploy ./public/build"
   },
   "dependencies": {
